@@ -3,8 +3,8 @@
 // Global Game Object
 var SGEGame = null;
 
-requirejs(['sge','tyrian'],
-    function   (sge, tyrian) {
+requirejs(['sge','mygame'],
+    function   (sge, mygame) {
 
         function getURLParameter(name) {
             return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
@@ -39,6 +39,6 @@ requirejs(['sge','tyrian'],
         //Enable Caat Debug widget with url param.
         CAAT.DEBUG=Boolean(getURLParameter('caat-debug'));
 
-        SGEGame = tyrian.CreateGame(idealWidth, idealHeight, idealFPS);
+        SGEGame = mygame.CreateGame(idealWidth, idealHeight, idealFPS);
         SGEGame.start();
 });
